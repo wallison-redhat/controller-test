@@ -21,7 +21,8 @@
       ansible.builtin.set_fact:
         cluster_list: "{{ cluster_list | default([]) + [item] }}"
       with_inventory_hostnames:
-        - ocp4_masters[:{{ master_num | int }}]:ocp4_infras[:{{ infra_num | int }}]
+        - ocp4_masters[:{{ master_num }}]
+        #- ocp4_masters[:{{ master_num | int }}]:ocp4_infras[:{{ infra_num | int }}]
 
     - name: Show cluster_list
       ansible.builtin.debug:
