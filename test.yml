@@ -1,0 +1,28 @@
+---
+- name: Test building cluster_list with a loop
+  hosts: localhost
+  gather_facts: False
+  vars_prompt:
+    - name: master_num
+      prompt: How many master nodes?
+      private: False
+
+    - name: infra_num
+      prompt: How many infra nodes?
+      private: False
+
+    - name: worker_num
+      prompt: How many worker nodes?
+      private: False
+
+  tasks:
+
+    - name: Define cluster_list
+      ansible.builtin.set_fact:
+        cluster_list: "{{ cluster_list | default([]) + [item] }}"
+      with_inventory_hostnames:
+        - ocp4_masters[:'master_num' | int]:ocp4_infras[:'infra_num' | int]
+
+    - name: Show cluster_list
+      ansible.builtin.debug:
+        var: cluster_list
