@@ -35,5 +35,7 @@
         var: "{{ item }}"
       with_items:
         - "{{ groups['ocp4_masters'][0:3] }}"
+        - "{{ groups['ocp4_infras'][0:9] }}"
+        - "{{ groups['ocp_workers'][0:7] }}"
         
       
