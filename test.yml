@@ -22,8 +22,8 @@
         cluster_list: "{{ cluster_list | default([]) + [item] }}"
       with_inventory_hostnames:
         - ocp4_masters[0:{{ master_num }}]
-        - ocp4_infras[0:{{ extra_infras }}]
-        - ocp4_workers[0:{{ extra_workers }}]
+        - extra_infras[0:{{ infra_num }}]
+        - extra_workers[0:{{ worker_num }}]
         #- ocp4_masters[0:{{ master_num | int }}]:ocp4_infras[0:{{ infra_num | int }}]:ocp4_workers[0:{{ worker_num | int }}]
 
     - name: Show cluster_list
