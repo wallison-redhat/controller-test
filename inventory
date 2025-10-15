@@ -16,6 +16,8 @@ hostnameoi06
 hostnameoi07
 hostnameoi08
 hostnameoi09
+
+[extra_infras]
 hostnameoi10
 hostnameoi11
 hostnameoi12
@@ -30,6 +32,8 @@ hostnameon06
 hostnameon07
 hostnameon08
 hostnameon09
+
+[extra_workers]
 hostnameon10
 hostnameon11
 hostnameon12
