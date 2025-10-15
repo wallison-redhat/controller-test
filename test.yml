@@ -29,13 +29,3 @@
     - name: Show cluster_list
       ansible.builtin.debug:
         var: cluster_list
-
-    - name: Print items
-      ansible.builtin.debug:
-        var: "{{ item }}"
-      loop:
-        - "{{ groups['ocp4_masters'] | slice(0:3) }}"
-        - "{{ groups['ocp4_infras'] | slice(0:9) }}"
-        - "{{ groups['ocp4_workers'] | slice(0:6) }}"
-        
-      
