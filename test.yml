@@ -33,7 +33,7 @@
     - name: Print items
       ansible.builtin.debug:
         var: "{{ item }}"
-      with_items:
+      loop:
         - "{{ groups['ocp4_masters'][0:3] }}"
         - "{{ groups['ocp4_infras'][0:9] }}"
         - "{{ groups['ocp4_workers'][0:7] }}"
