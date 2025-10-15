@@ -29,3 +29,11 @@
     - name: Show cluster_list
       ansible.builtin.debug:
         var: cluster_list
+
+    - name: Print items
+      ansible.builtin.debug:
+        var: "{{ item }}"
+      loop:
+        - ocp4_masters[0:{{ master_num }}]
+        
+      
