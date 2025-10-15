@@ -34,8 +34,8 @@
       ansible.builtin.debug:
         var: "{{ item }}"
       loop:
-        - "{{ groups['ocp4_masters'][0:3] }}"
-        - "{{ groups['ocp4_infras'][0:9] }}"
-        - "{{ groups['ocp4_workers'][0:7] }}"
+        - "{{ groups['ocp4_masters'] | slice(3) }}"
+        - "{{ groups['ocp4_infras'] | slice(9) }}"
+        - "{{ groups['ocp4_workers'] | slice(6) }}"
         
       
