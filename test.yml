@@ -34,6 +34,6 @@
       ansible.builtin.debug:
         var: "{{ item }}"
       loop:
-        - ocp4_masters[0:{{ master_num }}]
+        - {{ groups['ocp4_masters'][0:2] }}
         
       
