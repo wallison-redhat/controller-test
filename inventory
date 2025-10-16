@@ -1,4 +1,4 @@
-[ocp4_masters]
+[ocp4masters]
 hostnameob01
 hostnameob02
 hostnameob03
@@ -6,7 +6,7 @@ hostnameob04
 hostnameob05
 hostnameob06
 
-[ocp4_infras]
+[ocp4infras]
 hostnameoi01
 hostnameoi02
 hostnameoi03
@@ -17,7 +17,7 @@ hostnameoi07
 hostnameoi08
 hostnameoi09
 
-[extra_infras]
+[extrainfras]
 hostnameoi10
 hostnameoi11
 hostnameoi12
@@ -29,7 +29,7 @@ hostnameoi17
 hostnameoi18
 hostnameoi19
 
-[ocp4_workers]
+[ocp4workers]
 hostnameon01
 hostnameon02
 hostnameon03
@@ -40,7 +40,7 @@ hostnameon07
 hostnameon08
 hostnameon09
 
-[extra_workers]
+[extraworkers]
 hostnameon10
 hostnameon11
 hostnameon12
