@@ -21,7 +21,7 @@
       ansible.builtin.set_fact:
         cluster_list: "{{ cluster_list | default([]) + [item] }}"
       with_inventory_hostnames:
-        - ocp4_masters[{{ master_num }}] | sort
+        - ocp4_masters[{{ master_num }}]
         #- ocp4_infras[{{ infra_num }}] | sort
         #- ocp4_workers[{{ worker_num }}] | sort
         #- ocp4_masters[0:{{ master_num | int }}]:ocp4_infras[0:{{ infra_num | int }}]:ocp4_workers[0:{{ worker_num | int }}]
@@ -30,13 +30,13 @@
       ansible.builtin.set_fact:
         cluster_list: "{{ cluster_list | default([]) + [item] }}"
       with_inventory_hostnames:
-        - ocp4_infras[{{ infra_num }}] | sort
+        - ocp4_infras[{{ infra_num }}]
 
     - name: Define cluster_list
       ansible.builtin.set_fact:
         cluster_list: "{{ cluster_list | default([]) + [item] }}"
       with_inventory_hostnames:
-        - ocp4_workers[{{ worker_num }}] | sort
+        - ocp4_workers[{{ worker_num }}]
 
     - name: Show cluster_list
       ansible.builtin.debug:
