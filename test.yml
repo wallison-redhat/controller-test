@@ -40,4 +40,8 @@
 
     - name: Show cluster_list
       ansible.builtin.debug:
-        var: cluster_list
+        var: cluster_list | sort
+
+    - name: Sort cluster_list
+      ansible.builtin.set_fact:
+        cluster_list: "{{ cluster_list | sort }}"
